@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Nunito Sans' rel='stylesheet'>
+    <title>Saúl TODO List</title>
+</head>
+
+<body class="bg-[#18181b] text-white font-sans min-h-screen">
+    <section class="flex flex-col gap-8 mt-6 container p-1 mx-auto">
+
+        <h1 class="mx-auto mb-4 font-extrabold text-white text-5xl lg:text-6xl underline">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r to-zinc-600 from-stone-400">TO-DO List</span>
+        </h1>
+
+        <p
+            class="text-xl font-normal lg:text-2xl mx-auto text-transparent bg-clip-text bg-gradient-to-r to-zinc-50 from-stone-300">
+            Aplicación de lista creada por Saúl Fimbres, HTML, CSS, JS, Tailwind, MockAPI y un Redbull.
+        </p>
+
+        <form id="task-form" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <label for="title">Título</label>
+                <input type="text" id="title" placeholder="¿Traer leche?" autofocus required
+                    class="w-full p-2 border rounded bg-transparent">
+            </div>
+
+            <div>
+                <label for="description">Descripción</label>
+                <input type="text" id="description" placeholder="Si hay huevos, ¿traer 5?" required
+                    class="w-full p-2 border rounded bg-transparent">
+            </div>
+
+            <div>
+                <label for="tag">Tipo</label>
+                <input type="text" id="tag" placeholder="Mandado?" required
+                    class="w-full p-2 border rounded bg-transparent">
+            </div>
+
+            <div>
+                <label for="dueDate">Fecha</label>
+                <input type="date" id="dueDate" required class="w-full p-2 border rounded bg-transparent">
+            </div>
+
+            <div>
+                <label for="priority">Prioridad</label>
+                <select id="priority" class="w-full p-2 border rounded bg-zinc-300 text-black">
+                    <option value="Alta">Alta</option>
+                    <option value="Media">Media</option>
+                    <option value="Baja">Baja</option>
+                </select>
+            </div>
+
+            <div class="flex items-center pl-4 border border-gray-200 rounded">
+                <input id="completed" type="checkbox" value="false" name="bordered-checkbox"
+                    class="w-4 h-4 text-blue-700 bg-transparent border-gray-700 rounded focus:ring-blue-500">
+                <label for="completed" class="w-full py-4 ml-2 text-sm font-medium">Completada</label>
+            </div>
+            <button type="submit"
+                class="w-full sm:w-auto p-2 bg-zinc-800 text-white rounded hover:bg-zinc-600 shadow-lg">Agregar
+                Tarea</button>
+        </form>
+
+        <div class="w-full overflow-x-auto">
+            <table id="task-list" class="mt-4 w-full">
+                <!-- La lista de tareas se agregará aquí dinámicamente desde JavaScript -->
+            </table>
+        </div>
+    </section>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/app.js"></script>
+</body>
